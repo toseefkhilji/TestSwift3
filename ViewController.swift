@@ -72,8 +72,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if indexPath.row == 0 {
-            
             let vc = storyboard.instantiateViewController(withIdentifier: "LabelViewController")
+            self.navigationController!.pushViewController(vc, animated: true)
+        }
+        else{
+            let vc = storyboard.instantiateViewController(withIdentifier: "ButtonViewController")
             self.navigationController!.pushViewController(vc, animated: true)
         }
         
