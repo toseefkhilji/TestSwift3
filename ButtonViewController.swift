@@ -24,7 +24,7 @@ class ButtonViewController: UIViewController {
         self.view.addSubview(buttonSimple)
         
         buttonSimple.topAnchor.constraint(greaterThanOrEqualTo: self.view.topAnchor, constant: 60).isActive = true
-        buttonSimple.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 10).isActive = true
+        buttonSimple.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 20).isActive = true
 //        buttonSimple.layoutMargins.left = 100
         buttonSimple.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
         buttonSimple.heightAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
@@ -32,57 +32,50 @@ class ButtonViewController: UIViewController {
         let sysbtn : UIButton? = UIButton(type: .infoLight)
         self.view.addSubview(sysbtn!)
         sysbtn?.frame = CGRect(x: buttonSimple.bounds.size.width + 100, y: buttonSimple.frame.origin.y, width: 20, height: 20)
+//        
+//        sysbtn?.topAnchor.constraint(greaterThanOrEqualTo: self.view.topAnchor, constant: 60).isActive = true
+//        sysbtn?.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 210).isActive = true
+//                buttonSimple.layoutMargins.left = 100
+//        sysbtn?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+//        sysbtn?.heightAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
         
-//        sysbtn.topAnchor.constraint(greaterThanOrEqualTo: self.view.topAnchor, constant: 60).isActive = true
-//        sysbtn.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.leadingAnchor, constant: 210).isActive = true
-        //        buttonSimple.layoutMargins.left = 100
-//        sysbtn.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
-//        sysbtn.heightAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
-//     
         
         
-        var imge : UIImage?{
-            didSet{
-                buttonSimple.setImage(imge, for: .normal)
-            }
-        }
         
-    
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "blue3.png")!)
+        var bfrm = CGRect(x: 0, y: 130, width: 200, height: 50)
+        let  viewforblur = UIView(frame: bfrm)
+        viewforblur.backgroundColor = UIColor(patternImage: UIImage(named: "url.jpg")!)
+
+        self.view.addSubview(viewforblur)
+
+        let blurEffect2: UIBlurEffect = UIBlurEffect(style: .dark)
+        let blurView: UIVisualEffectView = UIVisualEffectView(effect: blurEffect2)
+        bfrm.origin.y = 0
+        blurView.frame = bfrm
+        viewforblur.addSubview(blurView)
         
-        let bfrm = CGRect(x: 5, y: 250, width: 300, height: 100)
-//        let blureff : UIBlurEffect = UIBlurEffect.init(style: .extraLight)
-        let vibEffect : UIVibrancyEffect = UIVibrancyEffect(blurEffect: .init(style: .extraLight))
-        let vibView = UIVisualEffectView(effect: vibEffect)
-        vibView.frame = bfrm
+        let vibrancyView: UIVisualEffectView = UIVisualEffectView(effect: UIVibrancyEffect.init(blurEffect: blurEffect2))
+        vibrancyView.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        blurView.contentView.addSubview(vibrancyView)
         
         let btnVib = UIButton(type: .custom)
         btnVib.setTitle("Vibrancy Button", for: .normal)
-        btnVib.frame = CGRect(x: 5, y: 200, width: 150, height: 40)
-        
-        vibView.contentView.addSubview(btnVib)
-        self.view.addSubview(vibView)
-        
-        
-        
-        
+        btnVib.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        btnVib.setTitleColor(UIColor.white, for: .normal)
+        btnVib.setTitleColor(UIColor.green, for: .highlighted)
+        btnVib.titleLabel?.textAlignment = .center
+    
+        vibrancyView.contentView.addSubview(btnVib)
         
         
         
-        
-        
-//        
-//        let blurEffect = UIBlurEffect.init(style: .dark)
+// Simple blur View
+//        let blurEffect = UIBlurEffect.init(style: .light)
 //        let visualEffectView = UIVisualEffectView.init(effect: blurEffect)
-//        visualEffectView.backgroundColor = UIColor().withAlphaComponent(0.60)
 //        visualEffectView.clipsToBounds = true
-//        visualEffectView.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
-//        visualEffectView.layer.borderWidth = 1.0
-//        visualEffectView.layer.cornerRadius = 6.0
-//        visualEffectView.frame = self.bounds
-//        self.insertSubview(visualEffectView, at: 0)
-        
+//        visualEffectView.frame = CGRect(x: 0, y: 200, width: 200, height: 50)
+//        self.view.addSubview(visualEffectView)
         
         
         
