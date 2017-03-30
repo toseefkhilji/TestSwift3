@@ -15,6 +15,7 @@ class ButtonViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        self.title = "Buttons"
         
         let buttonSimple = UIButton(type: .custom)
         buttonSimple.translatesAutoresizingMaskIntoConstraints = false
@@ -38,8 +39,6 @@ class ButtonViewController: UIViewController {
 //                buttonSimple.layoutMargins.left = 100
 //        sysbtn?.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
 //        sysbtn?.heightAnchor.constraint(lessThanOrEqualToConstant: 30).isActive = true
-        
-        
         
         
         
@@ -69,6 +68,20 @@ class ButtonViewController: UIViewController {
         vibrancyView.contentView.addSubview(btnVib)
         
         
+        
+        let btnImage = UIButton.init(type: .custom)
+        btnImage.frame = CGRect(x: 0, y: 250, width: 200, height: 30)
+
+        btnImage.setImage(UIImage(named: "upload"), for: .normal)
+        btnImage.setTitleColor(UIColor.green, for: .normal)
+        btnImage.setTitleColor(UIColor.black, for: .highlighted)
+        btnImage.setTitle("title", for: .normal)
+        btnImage.setTitle("tapped", for: .highlighted)
+        btnImage.backgroundColor = UIColor.white
+//        btnImage.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 50)
+        
+        
+        self.view.addSubview(btnImage)
         
 // Simple blur View
 //        let blurEffect = UIBlurEffect.init(style: .light)

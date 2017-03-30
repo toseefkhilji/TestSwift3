@@ -75,11 +75,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             let vc = storyboard.instantiateViewController(withIdentifier: "LabelViewController")
             self.navigationController!.pushViewController(vc, animated: true)
         }
-        else{
+        else if indexPath.row == 1 {
             let vc = storyboard.instantiateViewController(withIdentifier: "ButtonViewController")
             self.navigationController!.pushViewController(vc, animated: true)
         }
-        
+        else if indexPath.row == 2 {
+            let vc = storyboard.instantiateViewController(withIdentifier: "TextFieldViewController")
+            vc.title = "Textfield"
+            self.navigationController!.pushViewController(vc, animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {

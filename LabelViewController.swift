@@ -187,6 +187,24 @@ class LabelViewController: UIViewController {
         self.view.insertSubview(lblGrd, at: 0)
         
         
+        
+        let attach = NSTextAttachment.init()
+        attach.image = UIImage(named: "upload")
+        
+        let attaribtImg = NSAttributedString(attachment: attach)
+        
+        let attString = NSMutableAttributedString.init(string: "Upload Attribute")
+        attString.append(attaribtImg)
+        
+        let myImgLabel = UILabel.init(frame: CGRect(x: 150, y: 280, width: 300, height: 30))
+        myImgLabel.attributedText = attString;
+        myImgLabel.backgroundColor = UIColor.lightGray
+
+        self.view.addSubview(myImgLabel)
+        
+        
+        
+        
                 
         // Do any additional setup after loading the view.
     }

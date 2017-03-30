@@ -82,3 +82,19 @@ class BorderButton: UIButton {
     }
     
 }
+
+
+//extension DarkColor : UIColor{
+//    
+//    func darkColor(color : UIColor) -> UIColor {
+//        var red = CGFloat(), green = CGFloat(), blue = CGFloat(), alpha = CGFloat()
+//        
+//        color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+//        
+//        red = max(red - 0.5, 0.0)
+//        green = max(green - 0.5, 0.0)
+//        blue = max(blue - 0.5, 0.0)
+//        
+//        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+//    }
+//}
